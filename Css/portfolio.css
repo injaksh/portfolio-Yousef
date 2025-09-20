@@ -1,0 +1,507 @@
+/* Start Global Rules */
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:root{
+    --main-color: #d4a97c;
+    --background-color-tow:#253a55;
+    --background-color-one:#213848;
+    --main-transition: 0.3s;
+    --padding-top: 100px;
+    --padding-bottom: 100px;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "Cairo", sans-serif;
+}
+a {
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+.min-header{
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding-bottom: 10px;
+    left: 15px;
+}
+.min-header::before{
+    content: "";
+    position: absolute;
+    border: 10px solid;
+    border-color: transparent transparent transparent var(--main-color) ;
+    left: -15px;
+}
+/* start header */
+.header{
+    position: fixed;
+    background-color: #182635;
+    width: 100%;
+    box-shadow: 0 0 10px #ddd;
+    z-index: 1000;
+    top: 0;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+.header .logo{
+    color: var(--main-color);
+    font-size: 30px;
+    font-weight: bold;
+    height: 72px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header .links ul{
+    display: flex;
+}
+.header ul > li > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    position: relative;
+    color: rgb(249, 249, 249);
+    padding: 0 30px;
+    overflow: hidden;
+    font-size: 18px;
+    transition: var(--main-transition);
+}
+
+@media (max-width: 767px){
+    .header{
+        padding: 10px 0 0;
+    }
+    .header .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .header .logo{
+        width: 100%;
+        height: 50px;
+    }
+    .header ul{
+        margin: auto;
+    }
+    .header ul > li > a{
+        font-size: 14px;
+        padding: 10px;
+        height: 40px;
+    }
+    .header ul > li:not(:last-child){
+    border-right: 1px solid rgb(237, 229, 207);
+}
+}
+.header ul > li > a:hover{
+    background-color:#171d25cc ;
+}
+.header ul > li > a::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    top: 0;
+    left: -100%;
+    transition: var(--main-transition);
+}
+.header ul > li > a:hover::before{
+    left: 0;
+}
+/* end header */
+/* start landing */
+.landing{
+    position: relative;
+    overflow: hidden;
+    background-color: var(--background-color-one);
+}
+.landing .container{
+    padding-top: 100px;
+    padding-bottom: 50px;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.landing .text{
+    flex: 1;
+    max-width: 500px;
+}
+.landing .text .hello{
+    color: var(--main-color);
+    font-size: 30px;
+    padding-bottom: 50px;
+}
+.landing .text h1{
+        color: #fff;
+    font-size: 60px;
+    padding-bottom: 11px;
+    font-weight: bold;
+    margin: 0;
+}
+.landing .text p{
+    color: #b2b2b2be;
+    font-size: 24px;
+    margin: 2px 0 41px;
+    line-height: 1.5;
+}
+.landing .text .btn{
+        display: inline-block;
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 25px;
+    border-radius: 30px;
+    transition: var(--main-transition);
+}
+.landing .text .btn:hover{
+    background-color: #c4905f;
+}
+.landing .image img{
+    width: 380px;
+    height: 500px;
+    position: relative;
+    border-radius: 35%;
+}
+@media (max-width: 767px){
+    .landing .container{
+        flex-direction: column;
+        text-align: center;
+        height: 100%;
+    }
+    .landing .text{
+        margin-bottom: 50px;
+    }
+    .landing .image{
+        margin:30px auto;
+        order: -1;
+    }
+    .landing .image img{
+        width: 266px;
+        height: 330px;
+    }
+}
+/* end landing */
+/* start about */
+.about{
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    position: relative;
+    background-color: var(--background-color-tow);
+}
+.about .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.about .image img{
+    max-width: 350px;
+    border-radius: 35%;
+    
+}
+
+.about .content{
+    max-width: 700px;
+}
+@media (max-width: 767px){
+    .about .container{
+        flex-direction: column;
+        
+    }
+    .about .image img{
+        position: absolute;
+        max-width: 150px;
+        border-radius: 50%;
+        right: 20px;
+        top: 120px;
+        box-shadow: 0 0 10px #ddd;
+    }
+    .about .content{
+        padding-top: 120px;
+    }
+    .about .min-header{
+        position: absolute;
+        top: 100px;
+        left: 30px;
+    }
+}
+.about .content h2{
+    margin: 0 0 20px;
+    font-weight: 600;
+    color: var(--main-color);
+}
+.about .content p{
+    color: #b2b2b2be;
+    font-size: 18px;
+    margin: 2px 0 41px;
+    line-height: 1.2;
+}
+.about .content .btn{
+    display: inline-block;
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 30px;
+    transition: var(--main-transition);
+}
+.about .content .btn:hover{
+    background-color: #c4905f;
+}
+/* end about */
+/* start skills */
+.our-skills{
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    position: relative;
+    background-color: var(--background-color-one);
+}
+.our-skills .skills{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+    gap: 40px;
+}
+.our-skills .skills h3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #eee;
+}
+.our-skills .skills h3 span{
+    font-size: 12px;
+    border: 1px solid #c4905f;
+    border-radius: 4px;
+    padding: 3px 6px;
+    color: var(--main-color);
+}
+.our-skills .skills .the-progress{
+    height: 30px;
+    background-color: #4e5f72a1;
+    position: relative;
+}
+.our-skills .skills .the-progress span{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--main-color);
+}
+/* end skills */
+/* start sarvices */
+.services{
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    background-color: var(--background-color-tow);
+    position: relative;
+}
+.services h2 {
+    padding: 10px 0;
+    font-weight: 600;
+    color: var(--main-color);
+}
+.services .boxes{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+    gap: 40px;
+}
+.services .boxes .box{
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background-color: #4e5f72a1;
+    border-radius: 15px;
+    transition: var(--main-transition);
+}
+.services .boxes .box:hover{
+    box-shadow: 0 0 10px #ddd;
+}
+.services .boxes .box i{
+    font-size: 40px;
+    color: var(--main-color);
+}
+.services .boxes .box p{
+    color: #b2b2b2be;
+    font-size: 18px;
+    line-height: 1.5;
+
+}
+/* end sarvices */
+/* start project */
+.project{
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    position: relative;
+    background-color: var(--background-color-one);
+}
+.project h2{
+    padding: 10px 0;
+    font-weight: 600;
+    color: var(--main-color);
+}
+.project .boxes{
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+    gap: 40px;
+}
+.project .box{
+    background-color: #4e5f72a1;
+    border-radius: 15px;
+    padding-top: 15px;
+    
+}
+.project .box:hover{
+    box-shadow: 0 0 10px #ddd;
+}
+.project .box img{
+    max-width: 100%;
+}
+.project .box h3{
+    text-align: center;
+    color: var(--main-color);
+    padding: 15px 0;
+    margin: 0;
+}
+/* end project */
+/* start contact */
+.contact{
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    position: relative;
+    background-color: #191919;
+}
+.contact h2{
+    text-align: center;
+    color: var(--main-color);
+    font-size: 30px;
+}
+.contact .social{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+}
+.contact .social li a{
+    margin-right: 30px;
+    margin-bottom: 30px;
+    background-color: #4e5f72a1;
+    color: #d9d9d9;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+    height: 150px;
+    transition: var(--main-transition);
+}
+@media (max-width: 767px){
+    .contact .social li a{
+        margin-right: 10px;
+        margin-bottom: 10px;
+        width: 150px;
+        height: 150px;
+    }
+}
+.contact .social li a i{
+    font-size: 50px;
+}
+.contact .social li a span{
+    font-size: 30px;
+    font-weight: bold;
+}
+.contact .social .facebook:hover{
+    background-color: #1877f2 ;
+}
+.contact .social .instagram:hover{
+    background-color: #e1306c ;
+}
+.contact .social .snapchat:hover{
+    background-color: #fffc00 ;
+}
+.contact .social .WhatsApp:hover{
+    background-color: #075e54 ;
+}
+.contact .social .linkedin:hover{
+    background-color: #0a66c2 ;
+}
+.contact .social .tiktok:hover{
+    background-color: #fd1d1d ;
+}
+@media (max-width: 767px){
+    .contact .social .facebook{
+        background-color: #1876f2b2 ;
+    }
+    .contact .social .instagram{
+        background-color: #e1306cb2 ;
+    }
+    .contact .social .snapchat{
+        background-color: #fffc00b2 ;
+    }
+    .contact .social .WhatsApp{
+        background-color: #075e54b2 ;
+    }
+    .contact .social .linkedin{
+        background-color: #0a66c2b2 ;
+    }
+    .contact .social .tiktok{
+        background-color: #fd1d1db2 ;
+    }
+}
+/* end contact */
+footer{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #182635;
+    font-size: 17px;
+    color: white;
+}
+footer span{
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: bold;
+}
